@@ -1,0 +1,16 @@
+<template>
+    <div class="slds-theme_default">
+        <div class="slds-p-around_medium">
+            <template if:true={resultvalue}>
+                <lightning-progress-indicator current-step={resultvalue} type={typename} variant="base">
+                    <template for:each={stageList} for:item="stg">
+                        <lightning-progress-step key={stg} label={stg} value={stg}></lightning-progress-step>
+                    </template>
+                </lightning-progress-indicator>
+            </template>
+            <template if:true={error}>
+                <p>{error}</p>
+            </template>
+        </div>
+    </div>
+</template>
